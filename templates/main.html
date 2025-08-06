@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block main %}
+<div id="howlong">
+  <p>How long will you study?</p>
+</div>
+
+<div id ="question">
+  <div class="custom-num">
+    <i class="fa fa-angle-up"></i>
+    <input type="number" id="hs" class="num-input" min="0" max="23"value="0" data-color="#21d99b">
+    <label class="labels"for="hours">Hours</label>
+    <i class="fa fa-angle-down"></i>
+  </div>
+  <div class="custom-num">
+    <i class="fa fa-angle-up"></i>
+    <input type="number" id="ms" class="num-input" min="1" max="59" value="1" data-color="#fcba03">
+    <label class="labels"for="minutes">Minutes</label>
+    <i class="fa fa-angle-down"></i>
+  </div>
+  <button id="startButton" onclick="startCountdown()">Let's Start</button>
+</div>
+
+<div id="time">
+
+  <div class="circle" style="--clr:#ff2972;">
+    <div class="dots hr_dot"></div>
+    <svg>
+      <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70" id="hh"></circle>
+    </svg>
+    <div id="hours">00</div>
+  </div>
+
+  <div class="circle" style="--clr:#fee800;">
+    <div class="dots min_dot"></div>
+    <svg>
+      <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70" id="mm"></circle>
+    </svg>
+    <div id="minutes">00</div>
+  </div>
+
+  <div class="circle" style="--clr:#04fc43;">
+    <div class="dots sec_dot"></div>
+    <svg>
+      <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70" id="ss"></circle>
+    </svg>
+    <div id="seconds">00</div>
+  </div>
+
+  <div class="buttons">
+    <button id="stopBtn">Stop</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+</div>
+<div class="skill">
+  <h1>Level Progress</h1>
+  <li><h3>XP</h3>
+    <span class="bar"><span class="xp"></span></span>
+  </li>
+  <div id="xp">
+    <p></p>
+  </div>
+</div>
+<h2 class="focus">Focus.com</h2>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block main %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+<div class="skill" style="display:block;">
+    <h1>Level Progress</h1>
+    <li><h3>XP</h3>
+      <span class="bar"><span class="xp"></span></span>
+    </li>
+    <div id="xp">
+      <p>You are level {{level}} and have {{xp}} xp.</p>
+    </div>
+</div>
+{% endblock %}

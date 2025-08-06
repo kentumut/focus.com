@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block main %}
+<p>How long will your study session be?</p>
+  <div id="time-inputs">
+    <label for="hours">Hours:</label>
+    <input type="number" id="hours" min="0" value="0">
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes" min="0" max="59" value="0">
+  </div>
+  <button onclick="startCountdown()">Start Countdown</button>
+
+  <div id="progress">
+    <div id="progress-bar"></div>
+    <div id="progress-text">0%</div>
+  </div>
+
+  <div id="countdown"></div>
+{% endblock %}

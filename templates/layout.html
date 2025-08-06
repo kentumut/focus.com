@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Focus.com</title>
+</head>
+<body>
+  <div class="background"></div>
+  <header class="header">
+    <a href="/" class="logo">Focus.com</a>
+
+    <nav class="navbar">
+      {% if user_id %}
+      <div class="dropdown-container">
+        <a href="/profile">{{ user_id }}</a>
+        <ul class="dropdown">
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      {% else %}
+        <a href="login">Please log in</a>
+        <a href="register">or Register</a>
+      {% endif %}
+    </nav>
+  </header>
+  {% block main %}{% endblock %}
+</body>
+</html>
