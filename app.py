@@ -14,7 +14,19 @@ app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-db = SQL("sqlite:///database.db")
+
+# Database configuration - use PostgreSQL on Vercel, SQLite locally
+if os.environ.get('VERCEL'):
+    # Use PostgreSQL on Vercel
+    database_url = os.environ.get('DATABASE_URL')
+    if database_url:
+        db = SQL(database_url)
+    else:
+        # Fallback to SQLite if no DATABASE_URL
+        db = SQL("sqlite:///database.db")
+else:
+    # Use SQLite locally
+    db = SQL("sqlite:///database.db")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
