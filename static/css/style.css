@@ -22,7 +22,7 @@ body
     left: 0;
     width: 100%;
     min-height: 100vh;
-    background-image: url("../background2.jpg");
+    background: linear-gradient(135deg, #533483 0%,#1a1a2e 25%, #16213e 50%, #2d1b69 75%, #0f3460 100%);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
